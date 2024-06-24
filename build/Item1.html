@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Document</title>
+    <style>
+    .side-menu {
+        transition: transform 0.3s ease;
+    }
+</style>
+
+</head>
+<body class="overflow-x-hidden bg-slate-200">
+<header class="bg-red-600 text-white sticky top-0 z-50">   
+    <div class="container mx-auto flex justify-between items-center py-2 px-4 md:px-5 lg:px-14">
+        <div class="flex items-center">
+            <label for="" class="cursor-pointer md:hidden" >
+                <i class='bx bx-menu text-4xl mr-2' onclick="toggleMenu()"></i>
+            </label>
+            <a href="Gear.html" class="flex">
+                    <img src="img/Logo.png" alt="Logo" class="h-10">
+                <div class="text-2xl font-hihi pl-4 hidden md:block">Gear</div>
+            </a>
+            
+        </div>
+        <form action="#" class="flex items-center w-auto">
+            <input type="text" placeholder="Tìm kiếm..." class="px-4 lg:py-2 py-1 rounded-l-lg focus:outline-none text-black w-36 md:w-28 lg:w-72">
+            <button type="submit" class="bg-white text-black px-4 lg:py-2 py-1 rounded-r-lg hover:bg-gray-600 focus:outline-none"><i class='bx bx-search'></i></button>
+        </form>   
+        <a href="giohang.html" class="flex items-center py-2 px-3 bg-red-800 rounded-md md:hidden"><i class='bx bxs-cart text-2xl'></i></a>
+        <nav class="md:flex ml-2 space-x-2 hidden">     
+            <a href="#" class="flex items-center text-white text-sm font-medium hover:text-gray-400 mx-4">
+                <i class='bx bxs-map mr-2 text-2xl'></i>
+                <div class="flex flex-col">
+                    <span>Hệ thống</span>
+                    <span class="text-xs">Showroom</span>
+                </div>
+            </a>
+            <a href="Gear.html" class="text-white text-sm font-medium hover:text-gray-400 mx-4 flex items-center"><i class='bx bxs-home text-xl mr-1'></i>Trang chủ</a>
+            <a href="giohang.html" class="text-white text-sm font-medium hover:text-gray-400 mx-4 flex items-center"><i class='bx bxs-cart text-xl mr-1'></i>Giỏ hàng</a>
+            <a href="#" class="text-white text-sm font-medium hover:text-gray-400 mx-4 flex items-center"><i class='bx bxs-phone-call text-xl mr-1'></i>Liên hệ</a>
+        </nav>
+        <div class="md:flex space-x-2 items-center py-3 px-2 bg-red-800 rounded-md hidden">
+            <i class='bx bxs-user'></i>
+            <a href="Login.html" class="text-white tex-sm font-medium">Đăng nhập</a>
+        </div>
+    </div>
+</header>
+<div id="sideMenu" class="side-menu fixed top-0 left-0 h-full w-64 bg-gray-800 transform -translate-x-full z-50">
+    <div class="flex justify-end p-3 bg-red-800">
+        <i class='bx bx-x text-4xl text-white cursor-pointer' onclick="toggleMenu()"></i>
+    </div>
+    <a href="#" class="block text-white py-4 px-6">Trang chủ</a>
+    <a href="#" class="block text-white py-4 px-6">Hệ thống</a>
+    <a href="#" class="block text-white py-4 px-6">Liên hệ</a>
+    <div class="flex space-x-2 items-center py-2 px-2 bg-red-800 md:hidden">
+        <i class='bx bxs-user text-xl'></i>
+        <a href="" class="text-white tex-sm font-medium">Đăng nhập</a>
+    </div>
+</div>
+<div class="mt-7 mb-7 md:ml-24 ml-10">
+    <a class="text-blue-700" href="Gear.html"><i class='bx bxs-home'></i> Trang chủ <a> / </a><a href="" class="text-blue-700">Sản phẩm</a><a href=""> / </a><a href="">Bàn phím cơ AKKO MOD007 v3 HE Year of Dragon</a></a>
+</div>
+
+<div class="bg-white m-auto mt-3 xl:rounded-xl md:w-full xl:w-[1100px] md:h-[500px] md:flex items-center justify-center  w-full h-auto">
+    <div class="bg-white xl:w-[1040px] lg:h-[440px] md:flex grid grid-rows-2 w-auto h-auto md:w-full">
+        <div class="md:w-[400px] md:h-[440px] w-full h-auto">
+                <img src="img/akko-mod007v3-dragon.png" alt="Sản phẩm 1" class="xl:w-[400px] lg:h-[440px] object-cover w-full h-auto">
+        </div>
+        <div class="xl:ml-20 mt-3 lg:ml-10 md:ml-5">
+            <b class="lg:text-xl text-lg font-body ml-2">Bàn phím cơ AKKO MOD007 V3 HE Year of Dragon</b>
+            <div class="flex gap-6">
+                <p class="text-yellow-500 ml-2">0  <i class='bx bxs-star'></i></p>
+                <p class="text-blue-600s ml-2">Xem đánh giá</p>
+            </div>
+            <div class="mt-5">
+                <b class="text-red-600 md:text-3xl  text-2xl md:ml-6 ml-2">4.490.000<span class="text-2xl text-red-600">&#8363</span></b>
+            </div>
+             <div class="md:w-[300px] w-[340px] h-[65px] bg-red-600 rounded-md mt-10 text-white flex items-center justify-center m-auto">
+                <div class="text-center">
+                    <b class="text-base">MUA NGAY</b>
+                    <p class="text-xs">Giao tận nơi hoặc nhận tại cửa hàng</p>
+                </div>
+            </div>
+            <div class="lg:w-[550px] md:w-[378px] w-[340px] h-[76px] bg-white border border-black rounded-md mt-7 m-auto">
+                <div class="w-full h-[50%] bg-slate-400 rounded-t-md flex items-center justify-start">
+                    <b class="ml-7">Khuyến mãi</b>
+                </div>
+                <div class="w-full h-[50%] bg-white rounded-b-md text-sm flex items-center justify-center">
+                    <i class='bx bxs-offer text-green-600'></i>Ưu đãi 100.000đ khi mua thêm bàn phím cùng PC gaming.
+                    <p class="text-blue-600">(Xem thêm)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class=" m-auto mt-3 rounded-xl  xl:w-[1100px] w-full h-auto grid md:grid-cols-2 grid-cols-1 xl:gap-36 lg:gap-52 md:gap-2 gap-2">
+   <div class="bg-white lg:w-[600px]  h-[1600px] rounded-sm">
+    <div class="mt-5 ml-10">
+        <b class="text-2xl">Thông tin sản phẩm</b>
+    </div>
+    <div class=" lg:w-[530px] md:w-[370px] h-auto m-auto mt-8 w-[87%]">
+        <div class="mb-5">
+             <b >Đánh giá chi tiết bàn phím cơ AKKO MOD007 v3 HE Year of Dragon</b>
+        </div>
+       
+                <p>Chắc chắn rồng luôn mang theo sức mạnh và sự may mắn trong tâm hồn của mỗi người. Và giờ đây, với sự ra đời của bàn phím cơ AKKO MOD007 v3 HE Year of Dragon, điều đó trở nên rõ ràng hơn bao giờ hết. Phiên bản giới hạn này không chỉ là một sản phẩm công nghệ tiên tiến, mà còn là biểu tượng của sự may mắn và thịnh vượng. </p>
+                <br>
+                <p>  Với thiết kế lấy cảm hứng từ linh vật Rồng thiêng, AKKO MOD007 v3 HE Year of Dragon không chỉ là một bàn phím, mà còn là một tuyên ngôn về sự mạnh mẽ và tự tin. Hãy cùng GEARVN khám phá sức mạnh của những chiếc phím, và để AKKO MOD007 v3 HE Year of Dragon đưa bạn vào một hành trình đầy hứa hẹn, nơi mà may mắn và thành công luôn ở bên cạnh bạn.</p>
+                <img src="img/item1-1.png" alt="">
+        <div class="mb-5 mt-5">
+             <b>Hiệu ứng màu sắc đẹp mắt </b>       
+        </div>
+             <p>Khả năng hiển thị đến 16 triệu màu và có thể tùy chỉnh hiệu ứng qua phần mềm AKKO Gear, người dùng có thể tạo ra các hiệu ứng ánh sáng độc đáo và phong phú cho bàn phím của mình. Điều này không chỉ làm cho bàn phím trở nên rực rỡ và đẹp mắt, mà còn giúp họ thể hiện cá tính riêng của mình thông qua lựa chọn màu sắc và hiệu ứng ánh sáng phù hợp với sở thích và phong cách cá nhân. Cùng với tính năng cơ bản của một bàn phím cơ chất lượng, khả năng tùy chỉnh đèn LED này thực sự làm nổi bật và làm cho AKKO MOD007 v3 HE Year of Dragon trở thành một lựa chọn hấp dẫn cho cả người dùng cá nhân và các game thủ chuyên nghiệp.</p>
+            <img src="img/item1-2.png" alt="">
+    </div>
+       
+   </div>
+   <div class="xl:w-[446px] h-[700px] grid grid-cols-1 xl:gap-5 md:gap-2 gap-2">
+        <div class="bg-white xl:w-[480px] h-[340px] rounded-sm lg:w-[400px] md:w-[380px] w-full"> 
+                <div class="mt-5 ml-10">
+                    <b class="text-2xl">Cấu hình</b>
+                </div>
+                <div class="m-auto xl:w-[370px] xl:h-[300px] h-auto mt-5 md:w-[350px] w-[87%]">
+                        <p class="text-sm"><strong>Bảo hành:</strong> 12 tháng</p>
+                        <p class="text-sm"><strong>Thương hiệu:</strong> Akko</p>
+                        <p class="text-sm"><strong>RGB:</strong> Có</p>
+                        <p class="text-sm"> <strong> Phụ kiện:</strong> </p>
+                        <ul class="list-disc list-inside ml-4 mt-2 text-sm">
+                            <li>1 sách hướng dẫn sử dụng</li>
+                            <li>1 dây USB Type-C</li>
+                            <li>1 che bụi bàn phím</li>
+                            <li>1 bộ keycap tặng thêm</li>
+                            <li>1 bộ dụng cụ</li>
+                            <li>1 plate đồng</li>
+                        </ul>
+                    <p class="text-sm mt-4"><strong>Kết nối:</strong> Có dây - USB Type-C, hỗ trợ tần số 8k Hz</p>
+                </div>
+        </div>
+        <div class="bg-white xl:w-[480px] h-[440px] rounded-sm lg:w-[400px] md:w-[380px] w-full"> 
+        <div class="mt-5 ml-10">
+            <b class="text-2xl">Sản phẩm liên quan</b>
+        </div>
+        <div class="m-auto xl:w-[400px] h-[360px]  mt-5  grid grid-rows-3 md:w-[300px] w-full">
+            <div class="flex">
+                <img src="img/akko3103DB.png" alt="" class="object-cover h-[120px]">
+                <div class="text-sm mt-4 h-auto">
+                    <b class="ml-10">AKKO 3108 RF Dragon Ball Z Goku</b>
+                    <div class="text-red-600 text-base mt-2 ml-7"><b>1.690.000</b> <span class="text-sm text-black">&#8363</span></div>
+                    <a class="text-yellow-500 ml-7">0  <i class='bx bxs-star'></i> </a><a class="ml-2">(0 đánh giá)</a>
+                </div>
+            </div>
+            <div class="flex">
+                <img src="img/AsusROG.png" alt="" class="object-cover h-[120px]">
+                 <div class="text-sm mt-4 h-auto">
+                    <b class="ml-10">Asus ROG Strix Scope II 96 </b>
+                    <div class="text-red-600 text-base mt-2 ml-7"><b>1.690.000</b> <span class="text-sm text-black">&#8363</span></div>
+                    <a class="text-yellow-500 ml-7">0  <i class='bx bxs-star'></i> </a><a class="ml-2">(0 đánh giá)</a>
+                </div>
+            </div>
+            <div class="flex">
+                <img src="img/Azoth.png" alt="" class="object-cover h-[120px]">
+                 <div class="text-sm mt-4 h-auto">
+                    <b class="ml-10">Asus ROG Azoth White NX Snow</b>
+                    <div class="text-red-600 text-base mt-2 ml-7"><b>1.690.000</b> <span class="text-sm text-black">&#8363</span></div>
+                    <a class="text-yellow-500 ml-7">0  <i class='bx bxs-star'></i> </a><a class="ml-2">(0 đánh giá)</a>
+                </div>
+            </div>
+        </div>
+   </div>
+   </div>
+    
+</div>
+<div class=" text-white py-10 px-0 text-[14px] bg-slate-900 mt-24">
+    <div class="flex justify-between max-w-[1200px] my-0 mx-auto flex-wrap">
+        <div class="footer-column flex-1 m-[10px] min-w-[200px]">
+            <h3>Về Gear</h3>
+            <ul>
+                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="#">Tuyển dụng</a></li>
+                <li><a href="#">Chính sách bảo mật</a></li>
+            </ul>
+        </div>
+        <div class="footer-column flex-1 m-[10px] min-w-[200px]">
+            <h3>Hỗ trợ khách hàng</h3>
+            <ul>
+                <li><a href="#">Hướng dẫn mua hàng</a></li>
+                <li><a href="#">Chính sách đổi trả</a></li>
+                <li><a href="#">Liên hệ</a></li>
+            </ul>
+        </div>
+        <div class="footer-column flex-1 m-[10px] min-w-[200px]">
+            <h3>Liên hệ</h3>
+            <ul>
+                <li>Địa chỉ: Số 10 Đường ABC, Quận XYZ, TP.Đà nẵng</li>
+                <li>Điện thoại: 0123 456 789</li>
+                <li>Email: contact@blabla.com</li>
+            </ul>
+        </div>
+        <div class="footer-column flex-1 m-[10px] min-w-[200px]">
+            <h3>Kết nối với chúng tôi</h3>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">YouTube</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    function toggleMenu() {
+        const sideMenu = document.getElementById('sideMenu');
+        sideMenu.classList.toggle('-translate-x-full');
+        sideMenu.classList.toggle('translate-x-0');
+    }
+</script>
+<script src="js/GearUrek.js"></script>
+</body>
+</html>

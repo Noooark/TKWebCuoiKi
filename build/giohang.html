@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Document</title>
+    <style>
+    .side-menu {
+        transition: transform 0.3s ease;
+    }
+</style>
+
+</head>
+<body class="overflow-x-hidden bg-slate-200">
+<header class="bg-red-600 text-white sticky top-0 z-50">   
+    <div class="container mx-auto flex justify-between items-center py-2 px-4 md:px-5 lg:px-14">
+        <div class="flex items-center">
+            <label for="" class="cursor-pointer md:hidden" >
+                <i class='bx bx-menu text-4xl mr-2' onclick="toggleMenu()"></i>
+            </label>
+            <a href="Gear.html" class="flex">
+                    <img src="img/Logo.png" alt="Logo" class="h-10">
+                <div class="text-2xl font-hihi pl-4 hidden md:block">Gear</div>
+            </a>
+            
+        </div>
+        <form action="#" class="flex items-center w-auto">
+            <input type="text" placeholder="Tìm kiếm..." class="px-4 lg:py-2 py-1 rounded-l-lg focus:outline-none text-black w-36 md:w-28 lg:w-72">
+            <button type="submit" class="bg-white text-black px-4 lg:py-2 py-1 rounded-r-lg hover:bg-gray-600 focus:outline-none"><i class='bx bx-search'></i></button>
+        </form>   
+        <a href="#" class="flex items-center py-2 px-3 bg-red-800 rounded-md md:hidden"><i class='bx bxs-cart text-2xl'></i></a>
+        <nav class="md:flex ml-2 space-x-2 hidden">
+            <a href="#" class="flex items-center text-white text-sm font-medium hover:text-gray-400 mx-4">
+                <i class='bx bxs-map mr-2 text-2xl'></i>
+                <div class="flex flex-col">
+                    <span>Hệ thống</span>
+                    <span class="text-xs">Showroom</span>
+                </div>
+            </a>
+            <a href="Gear.html" class="text-white text-sm font-medium hover:text-gray-400 mx-4 flex items-center"><i class='bx bxs-home text-xl mr-1'></i>Trang chủ</a>
+            <a href="giohang.html" class="text-white text-sm font-medium hover:text-gray-400 mx-4 flex items-center"><i class='bx bxs-cart text-xl mr-1'></i>Giỏ hàng</a>
+            <a href="#" class="text-white text-sm font-medium hover:text-gray-400 mx-4 flex items-center"><i class='bx bxs-phone-call text-xl mr-1'></i>Liên hệ</a>
+        </nav>
+        <div class="md:flex space-x-2 items-center py-3 px-2 bg-red-800 rounded-md hidden">
+            <i class='bx bxs-user'></i>
+            <a href="Login.html" class="text-white tex-sm font-medium">Đăng nhập</a>
+        </div>
+    </div>
+</header>
+<div id="sideMenu" class="side-menu fixed top-0 left-0 h-full w-64 bg-gray-800 transform -translate-x-full z-50">
+    <div class="flex justify-end p-3 bg-red-800">
+        <i class='bx bx-x text-4xl text-white cursor-pointer' onclick="toggleMenu()"></i>
+    </div>
+    <a href="#" class="block text-white py-4 px-6">Trang chủ</a>
+    <a href="#" class="block text-white py-4 px-6">Hệ thống</a>
+    <a href="#" class="block text-white py-4 px-6">Liên hệ</a>
+    <div class="flex space-x-2 items-center py-2 px-2 bg-red-800 md:hidden">
+        <i class='bx bxs-user text-xl'></i>
+        <a href="" class="text-white tex-sm font-medium">Đăng nhập</a>
+    </div>
+</div>
+<div class="mt-7 mb-7 md:ml-24 ml-10">
+    <a class="text-blue-700" href="Gear.html"><i class='bx bxs-home'></i> Trang chủ <a> / </a><a href=""> Giỏ hàng</a></a>
+</div>
+<div class="h-[400px] w-full  flex items-center justify-center">
+    <p class="text-xl"> Giỏ hàng của bạn đang trống</p>
+</div>
+<footer class=" text-white px-0 text-[14px] bg-slate-900 mt-24">
+        <div class="flex justify-between max-w-[1200px] my-0 mx-auto flex-wrap">
+            <div class="footer-column flex-1 m-[10px] min-w-[200px]">
+                <h3>Về Gear</h3>
+                <ul>
+                    <li><a href="#">Giới thiệu</a></li>
+                    <li><a href="#">Tuyển dụng</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                </ul>
+            </div>
+            <div class="footer-column flex-1 m-[10px] min-w-[200px]">
+                <h3>Hỗ trợ khách hàng</h3>
+                <ul>
+                    <li><a href="#">Hướng dẫn mua hàng</a></li>
+                    <li><a href="#">Chính sách đổi trả</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="footer-column flex-1 m-[10px] min-w-[200px]">
+                <h3>Liên hệ</h3>
+                <ul>
+                    <li>Địa chỉ: Số 10 Đường ABC, Quận XYZ, TP.Đà nẵng</li>
+                    <li>Điện thoại: 0123 456 789</li>
+                    <li>Email: contact@blabla.com</li>
+                </ul>
+            </div>
+            <div class="footer-column flex-1 m-[10px] min-w-[200px]">
+                <h3>Kết nối với chúng tôi</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+<!-- <div class=" text-white py-10 px-0 text-[14px] bg-slate-900 mt-24">
+    <div class="flex justify-between max-w-[1200px] my-0 mx-auto flex-wrap">
+        <div class="footer-column flex-1 m-[10px] min-w-[200px]">
+            <h3>Về Gear</h3>
+            <ul>
+                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="#">Tuyển dụng</a></li>
+                <li><a href="#">Chính sách bảo mật</a></li>
+            </ul>
+        </div>
+        <div class="footer-column flex-1 m-[10px] min-w-[200px]">
+            <h3>Hỗ trợ khách hàng</h3>
+            <ul>
+                <li><a href="#">Hướng dẫn mua hàng</a></li>
+                <li><a href="#">Chính sách đổi trả</a></li>
+                <li><a href="#">Liên hệ</a></li>
+            </ul>
+        </div>
+        <div class="footer-column flex-1 m-[10px] min-w-[200px]">
+            <h3>Liên hệ</h3>
+            <ul>
+                <li>Địa chỉ: Số 10 Đường ABC, Quận XYZ, TP.Đà nẵng</li>
+                <li>Điện thoại: 0123 456 789</li>
+                <li>Email: contact@blabla.com</li>
+            </ul>
+        </div>
+        <div class="footer-column flex-1 m-[10px] min-w-[200px]">
+            <h3>Kết nối với chúng tôi</h3>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">YouTube</a></li>
+            </ul>
+        </div>
+    </div>
+</div> -->
+<script>
+    function toggleMenu() {
+        const sideMenu = document.getElementById('sideMenu');
+        sideMenu.classList.toggle('-translate-x-full');
+        sideMenu.classList.toggle('translate-x-0');
+    }
+</script>
+<script src="js/GearUrek.js"></script>
+</body>
+</html>

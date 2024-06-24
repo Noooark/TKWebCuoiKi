@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Document</title>
+    <style>
+    .side-menu {
+        transition: transform 0.3s ease;
+    }
+</style>
+
+</head>
+<body class="overflow-x-hidden bg-slate-200">
+<header class="bg-red-600 text-white sticky top-0 z-50">   
+    <div class="container mx-auto flex justify-between items-center py-2 px-4 md:px-5 lg:px-14">
+        <div class="flex items-center">
+            <label for="" class="cursor-pointer md:hidden" >
+                <i class='bx bx-menu text-4xl mr-2' onclick="toggleMenu()"></i>
+            </label>
+            <a href="Gear.html" class="flex">
+                    <img src="img/Logo.png" alt="Logo" class="h-10">
+                <div class="text-2xl font-hihi pl-4 hidden md:block">Gear</div>
+            </a>
+            
+        </div>
+        <form action="#" class="flex items-center w-auto">
+            <input type="text" placeholder="Tìm kiếm..." class="px-4 lg:py-2 py-1 rounded-l-lg focus:outline-none text-black w-36 md:w-28 lg:w-72">
+            <button type="submit" class="bg-white text-black px-4 lg:py-2 py-1 rounded-r-lg hover:bg-gray-600 focus:outline-none"><i class='bx bx-search'></i></button>
+        </form>   
+        <a href="giohang.html" class="flex items-center py-2 px-3 bg-red-800 rounded-md md:hidden"><i class='bx bxs-cart text-2xl'></i></a>
+        <nav class="md:flex ml-2 space-x-2 hidden">
+            <a href="#" class="flex items-center text-white text-sm font-medium hover:text-gray-400 mx-4">
+                <i class='bx bxs-map mr-2 text-2xl'></i>
+                <div class="flex flex-col">
+                    <span>Hệ thống</span>
+                    <span class="text-xs">Showroom</span>
+                </div>
+            </a>
+            <a href="Gear.html" class="text-white text-sm font-medium hover:text-gray-400 mx-4 flex items-center"><i class='bx bxs-home text-xl mr-1'></i>Trang chủ</a>
+            <a href="giohang.html" class="text-white text-sm font-medium hover:text-gray-400 mx-4 flex items-center"><i class='bx bxs-cart text-xl mr-1'></i>Giỏ hàng</a>
+            <a href="#" class="text-white text-sm font-medium hover:text-gray-400 mx-4 flex items-center"><i class='bx bxs-phone-call text-xl mr-1'></i>Liên hệ</a>
+        </nav>
+        <div class="md:flex space-x-2 items-center py-3 px-2 bg-red-800 rounded-md hidden">
+            <i class='bx bxs-user'></i>
+            <a href="Login.html" class="text-white tex-sm font-medium">Đăng nhập</a>
+        </div>
+    </div>
+</header>
+<div id="sideMenu" class="side-menu fixed top-0 left-0 h-full w-64 bg-gray-800 transform -translate-x-full z-50">
+    <div class="flex justify-end p-3 bg-red-800">
+        <i class='bx bx-x text-4xl text-white cursor-pointer' onclick="toggleMenu()"></i>
+    </div>
+    <a href="#" class="block text-white py-4 px-6">Trang chủ</a>
+    <a href="#" class="block text-white py-4 px-6">Hệ thống</a>
+    <a href="#" class="block text-white py-4 px-6">Liên hệ</a>
+    <div class="flex space-x-2 items-center py-2 px-2 bg-red-800 md:hidden">
+        <i class='bx bxs-user text-xl'></i>
+        <a href="" class="text-white tex-sm font-medium">Đăng nhập</a>
+    </div>
+</div>
+ <div class="flex justify-center items-center lg:mt-3 m-auto gap-5 h-auto w-auto">
+        <div class="slider relative overflow-hidden rounded-sm z-0 aspect-video max-w-[900] w-full h-[520px] m-auto lg:w-[1200px]">
+            <div class="imglist absolute mt-0 ml-0 flex w-max h-full">
+                <div class="item">
+                    <img src="img/1.png" alt="" class="object-cover">               
+                </div>
+                <div class="item">
+                    <img src="img/2.png" alt="" class="object-cover">
+                </div>
+                <div class="item">
+                    <img src="img/3.png" alt="" class="object-cover">
+                </div>
+                <div class="item">
+                    <img src="img/4.png" alt="" class="object-cover">
+                </div>
+                <div class="item">
+                    <img src="img/5.png" alt="" class="object-cover">
+                </div>     
+            </div>
+            <div class="buttons absolute top-[45%] left-[5%] w-[90%] flex justify-between">
+                <button id="prev" class="w-[50px] h-[50px] rounded-[50%] bg-gray-500 text-black border-none font-hihi font-bold"> < </button>
+                <button id="next" class="w-[50px] h-[50px] rounded-[50%] bg-gray-500 text-black border-none font-hihi font-bold"> > </button>
+            </div>
+            <ul class="dot absolute bottom-3 left-0 w-full m-0 p-0 flex justify-center">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+</div>
+<div class="mt-3 bg-white rounded-md lg:w-[1000px] xl:w-[1200px] m-auto hidden md:block w-[765px] mb-2">
+    <br>
+    <div class="text-xl text-red-600 ml-20">
+     Danh mục sản phẩm
+    </div>
+    <br>
+    <div class="flex justify-center md:items-center ml-9">
+        <ul class="list grid grid-cols-4 md:gap-10 w-[800px] text-lg">
+            <li><i class='bx bx-laptop mr-2'></i>Laptop</li>
+            <li><i class='bx bxs-keyboard mr-2' ></i>Bàn phím</li>
+            <li><i class='bx bx-headphone mr-2' ></i>Tai nghe</li>
+            <li><i class='bx bxs-mouse-alt mr-2' ></i>Chuột</li>
+            <li>Lót chuột</li>
+            <li><i class='bx bx-usb mr-2'></i>Phụ kiện</li>
+            <li><i class='bx bxs-speaker mr-2'></i>Loa</li>
+            <li><i class='bx bx-desktop mr-2' ></i>Màn hình</li>
+        </ul>
+    </div>
+    
+    <br>
+</div>
+<div class="bg-white text-center m-auto lg:mt-3 mt-3 rounded-md lg:w-[1000px] xl:w-[1200px] w-full">    
+        <div>
+            <br>
+            <div class="flex items-center justify-around">
+                <h2 class="font-haha md:text-xl text-lg flex items-center"><i class='bx bx-laptop mt-1 mr-3 md:text-xl text-lg'></i> Laptop Gaming bán chạy <span class="text-black ml-2 hidden md:block">|</span> <span class="text-lg mt-2 text-black hidden md:block"><i class='bx bxs-cart mr-2 text-red-700'></i>Miễn phí vận chuyển</span></h2><span class="text-blue-700 text-lg lg:text-sm">Xem tất cả ...</span>
+            </div>
+              
+            <br>
+        </div>
+        <div class="grid sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 grid-cols-2 lg:w-[950px] xl:w-[1100px] sm:w-[690px] w-[365px] h-auto lg:gap-2 lg:ml-11 gap-3 md:gap-4 m-auto mt-3 sm:items-center sm:gap-4">
+            <div class=" rounded-md md:w-[200px] w-[170px] text-center shadow-md shadow-black">
+                <img src="img/9.png" alt="Sản phẩm 1" class="max-w-full h-auto ">
+                <h3>Laptop gaming Lenovo LOQ 15IRH8 82XV00Q4VN</h3>
+                <div class="w-[170px] h-auto bg-slate-200 m-auto rounded-sm text-sm text-left">
+                    <p><i class='bx bx-chip'></i>i5-13420H  RTX 4050</p>
+                    <p>16 GB  512 GB</p> 
+                    <p><i class='bx bx-desktop'></i>15.6 inchFHD  144Hz</p>
+                </div>
+                <div class="text-red-800 text-lg">22.990.000 <span class="text-sm text-black">&#8363</span></div>
+            </div>
+            <div class=" rounded-md md:w-[200px] w-[170px] text-center shadow-md shadow-black ">
+                <img src="img/10.png" alt="Sản phẩm 1" class="max-w-full h-auto">
+                <h3>Laptop gaming Acer Nitro V ANV15 51 72VS</h3>
+                <div class="w-[170px] h-auto bg-slate-200 m-auto rounded-sm text-sm text-left">
+                    <p><i class='bx bx-chip'></i>i7-13620H RTX 2050</p>
+                    <p>16 GB  512 GB</p>
+                    <p><i class='bx bx-desktop'></i>15.6 inchFHD  144Hz</p>
+                </div>
+                <div class="text-red-800 text-lg">23.990.000 <span class="text-sm text-black">&#8363</span></div>
+            </div>
+            <div class="  rounded-md md:w-[200px] w-[170px] text-center shadow-md shadow-black ">
+                <img src="img/11.png" alt="Sản phẩm 1" class="max-w-full h-auto">
+                <h3>Laptop gaming MSI Sword 16 HX B14VFKG 045VN</h3>
+                <div class="w-[170px] h-auto bg-slate-200 m-auto rounded-sm text-sm text-left">
+                    <p><i class='bx bx-chip'></i>i7-14700HX  RTX 4060</p>
+                    <p>16 GB  1 TB</p>
+                    <p><i class='bx bx-desktop'></i>16 inch QHD+  140Hz</p>
+                </div>
+                <div class="text-red-800 text-lg">39.990.000 <span class="text-sm text-black">&#8363</span></div>
+            </div>
+            <div class="  rounded-md md:w-[200px] w-[170px] text-center shadow-md shadow-black ">
+                <img src="img/12.png" alt="Sản phẩm 1" class="max-w-full h-auto">
+                <h3>Laptop gaming MSI GF63 12UC 887VN</h3>
+                <div class="w-[170px] h-auto bg-slate-200 m-auto rounded-sm text-sm text-left">
+                    <p><i class='bx bx-chip'></i>i7-12650H  RTX 3050</p>
+                    <p>8 GB  512 GB</p>
+                    <p><i class='bx bx-desktop'></i>15.6 inch FHD  144Hz</p>
+                </div>
+                <div class="text-red-800 text-lg">18.990.000 <span class="text-sm text-black">&#8363</span></div>
+            </div>
+            <div class="   rounded-md md:w-[200px] w-[170px] text-center shadow-md shadow-black ">
+                <img src="img/13.png" alt="Sản phẩm 1" class="max-w-full h-auto">
+                <h3>Laptop gaming MSI Stealth GS77 12UHS 250VN</h3>
+                <div class="w-[170px] h-auto bg-slate-200 m-auto rounded-sm text-sm text-left">
+                    <p><i class='bx bx-chip'></i>i9-12900H  RTX 3080Ti</p>
+                    <p>64 GB  2 TB</p>
+                    <p><i class='bx bx-desktop'></i>17 inch UHD  120Hz</p>
+                </div>
+                <div class="text-red-800 text-lg">69.990.000 <span class="text-sm text-black">&#8363</span></div>
+            </div>
+            <div class="   rounded-md md:w-[200px] w-[170px] text-center shadow-md shadow-black ">
+                <img src="img/14.png" alt="Sản phẩm 1" class="max-w-full h-auto">
+                <h3>Laptop gaming ASUS TUF F15 FX507ZC4 HN074W</h3>
+                <div class="w-[170px] h-auto bg-slate-200 m-auto rounded-sm text-sm text-left">
+                    <p><i class='bx bx-chip'></i>i5-12500H  RTX 3050</p>
+                    <p>8 GB  512 GB</p>
+                    <p><i class='bx bx-desktop'></i>15.6 inch FHD  144Hz</p>
+                </div>
+                <div class="text-red-800 text-lg">19.490.000 <span class="text-sm text-black">&#8363</span></div>
+            </div>
+            <div class="   rounded-md md:w-[200px] w-[170px] text-center shadow-md shadow-black ">
+                <img src="img/15.png" alt="Sản phẩm 1" class="max-w-full h-auto">
+                <h3>Laptop gaming Acer Nitro 5 Tiger AN515 58 50EE</h3>
+                <div class="w-[170px] h-auto bg-slate-200 m-auto rounded-sm text-sm text-left">
+                    <p><i class='bx bx-chip'></i>i5-12450H  RTX 3050</p>
+                    <p>8 GB  512 GB</p>
+                    <p><i class='bx bx-desktop'></i>15.5 inch FHD  144Hz</p>
+                </div>
+                <div class="text-red-800 text-lg">19.990.000 <span class="text-sm text-black">&#8363</span></div>
+            </div>
+            <div class="   rounded-md md:w-[200px] w-[170px] text-center shadow-md shadow-black">
+                <img src="img/17.png" alt="Sản phẩm 1" class="max-w-full h-auto">
+                <p class="text-base">Laptop gaming MSI Stealth 16 Mercedes AMG A13VG</p>
+                <div class="w-[170px] h-auto bg-slate-200 m-auto rounded-sm text-sm text-left">
+                    <p><i class='bx bx-chip'></i>i9-13900H  RTX 4070</p>
+                    <p>32 GB  2TB</p>
+                    <p><i class='bx bx-desktop'></i>16 inch UHD+OLED</p>
+                </div>
+                <div class="text-red-800 text-lg">69.990.000 <span class="text-sm text-black">&#8363</span></div>
+            </div>
+            <div class="   rounded-md md:w-[200px] w-[170px] text-center shadow-md shadow-black">
+                <img src="img/17.png" alt="Sản phẩm 1" class="max-w-full h-auto">
+                <p class="text-base">Laptop gaming MSI Stealth 16 Mercedes AMG A13VG</p>
+                <div class="w-[170px] h-auto bg-slate-200 m-auto rounded-sm text-sm text-left">
+                    <p><i class='bx bx-chip'></i>i9-13900H  RTX 4070</p>
+                    <p>32 GB  2TB</p>
+                    <p><i class='bx bx-desktop'></i>16 inch UHD+OLED</p>
+                </div>
+                <div class="text-red-800 text-lg">69.990.000 <span class="text-sm text-black">&#8363</span></div>
+            </div>
+            <div class="   rounded-md md:w-[200px] w-[170px] text-center shadow-md shadow-black">
+                <img src="img/17.png" alt="Sản phẩm 1" class="max-w-full h-auto">
+                <p class="text-base">Laptop gaming MSI Stealth 16 Mercedes AMG A13VG</p>
+                <div class="w-[170px] h-auto bg-slate-200 m-auto rounded-sm text-sm text-left">
+                    <p><i class='bx bx-chip'></i>i9-13900H  RTX 4070</p>
+                    <p>32 GB  2TB</p>
+                    <p><i class='bx bx-desktop'></i>16 inch UHD+OLED</p>
+                </div>
+                <div class="text-red-800 text-lg">69.990.000 <span class="text-sm text-black">&#8363</span></div>
+            </div>
+        </div>
+        <br>
+    </div>
+<!-- laptop van phong  -->
+    <div class="bg-white text-center m-auto lg:mt-3 mt-3 rounded-md lg:w-[1000px] xl:w-[1200px] w-full">    
+        <div>
+            <br>
+            <div class="flex items-center justify-around">
+                <h2 class="font-haha md:text-xl text-lg flex items-center"><i class='bx bx-laptop mt-1 mr-3 md:text-xl text-lg'></i> Laptop văn phòng bán chạy <span class="text-black ml-2 hidden md:block">|</span> <span class="text-lg mt-2 text-black hidden md:block"><i class='bx bxs-cart mr-2 text-red-700'></i>Miễn phí vận chuyển</span></h2><span class="text-blue-700 text-lg lg:text-sm">Xem tất cả ...</span>
+            </div>
+              
+            <br>
+        </div>
+        <div class="grid sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 grid-cols-2 lg:w-[950px] xl:w-[1100px] sm:w-[690px] w-[365px] h-auto lg:gap-2 lg:ml-11 gap-3 md:gap-4 m-auto mt-3 sm:items-center sm:gap-4">
+            <div class=" rounded-md md:w-[200px] w-[170px] text-center shadow-sm shadow-black">
+                <img src="img/19.png" alt="Sản phẩm 1" class="max-w-full h-auto ">
+                <h3>Laptop ASUS Vivobook 16 M1605YA MB303W</h3>
+                <div class="w-[170px] h-auto bg-slate-200 m-auto rounded-sm text-sm text-left">
+                    <p><i class='bx bx-chip'></i>R7-7730U  Onboard</p>
+                    <p>16 GB  512 GB</p> 
+                    <p><i class='bx bx-desktop'></i>16 inch WUXGA IPS  60Hz</p>
+                </div>
+                <div class="text-red-800 text-lg">13.990.000 <span class="text-sm text-black">&#8363</span></div>
+            </div>
+            <div class=" rounded-md md:w-[200px] w-[170px] text-center shadow-sm shadow-black ">
+                <img src="img/20.png" alt="Sản phẩm 1" class="max-w-full h-auto">
+            <h3>Laptop Lenovo IdeaPad Slim 5 14IMH9 83DA0020VN</h3>
+                <div class="w-[170px] h-auto bg-slate-200 m-auto rounded-sm text-sm text-left">
+                    <p><i class='bx bx-chip'></i>i7-13620H RTX 2050</p>
+                    <p>16 GB  512 GB</p>
+                    <p><i class='bx bx-desktop'></i>15.6 inchFHD  144Hz</p>
+                </div>
+                <div class="text-red-800 text-lg">25.790.000 <span class="text-sm text-black">&#8363</span></div>
+            </div>
+            <div class="  rounded-md md:w-[200px] w-[170px] text-center shadow-sm shadow-black ">
+                <img src="img/21.png" alt="Sản phẩm 1" class="max-w-full h-auto">
+                <h3>Laptop Lenovo V14 G4 IRU 83A000BHVN</h3>
+                <div class="w-[170px] h-auto bg-slate-200 m-auto rounded-sm text-sm text-left">
+                    <p><i class='bx bx-chip'></i>i7-14700HX  RTX 4060</p>
+                    <p>16 GB  1 TB</p>
+                    <p><i class='bx bx-desktop'></i>16 inch QHD+  140Hz</p>
+                </div>
+                <div class="text-red-800 text-lg">13.990.000 <span class="text-sm text-black">&#8363</span></div>
+            </div>
+            <div class="  rounded-md md:w-[200px] w-[170px] text-center shadow-sm shadow-black ">
+                <img src="img/22.png" alt="Sản phẩm 1" class="max-w-full h-auto">
+                <h3>Laptop ASUS Expertbook B1 B1402CBA NK1535W</h3>
+                <div class="w-[170px] h-auto bg-slate-200 m-auto rounded-sm text-sm text-left">
+                    <p><i class='bx bx-chip'></i>i7-12650H  RTX 3050</p>
+                    <p>8 GB  512 GB</p>
+                    <p><i class='bx bx-desktop'></i>15.6 inch FHD  144Hz</p>
+                </div>
+                <div class="text-red-800 text-lg">9.490.000 <span class="text-sm text-black">&#8363</span></div>
+            </div>
+            <div class="   rounded-md md:w-[200px] w-[170px] text-center shadow-sm shadow-black ">
+                <img src="img/23.png" alt="Sản phẩm 1" class="max-w-full h-auto">
+                <h3>Laptop Lenovo V14 G4 IRU 83A0000TVN</h3>
+                <div class="w-[170px] h-auto bg-slate-200 m-auto rounded-sm text-sm text-left">
+                    <p><i class='bx bx-chip'></i>i9-12900H  RTX 3080Ti</p>
+                    <p>64 GB  2 TB</p>
+                    <p><i class='bx bx-desktop'></i>17 inch UHD  120Hz</p>
+                </div>
+                <div class="text-red-800 text-lg">13.490.000 <span class="text-sm text-black">&#8363</span></div>
+            </div>
+            <div class="   rounded-md md:w-[200px] w-[170px] text-center shadow-sm shadow-black ">
+                <img src="img/24.png" alt="Sản phẩm 1" class="max-w-full h-auto">
+                <h3>Laptop ASUS Zenbook 14 OLED UX3405MA PP588W</h3>
+                <div class="w-[170px] h-auto bg-slate-200 m-auto rounded-sm text-sm text-left">
+                    <p><i class='bx bx-chip'></i>i5-12500H  RTX 3050</p>
+                    <p>8 GB  512 GB</p>
+                    <p><i class='bx bx-desktop'></i>15.6 inch FHD  144Hz</p>
+                </div>
+                <div class="text-red-800 text-lg">26.490.000 <span class="text-sm text-black">&#8363</span></div>
+            </div>
+            <div class="   rounded-md md:w-[200px] w-[170px] text-center shadow-sm shadow-black ">
+                <img src="img/25.png" alt="Sản phẩm 1" class="max-w-full h-auto">
+                <h3>Laptop ASUS Vivobook S 16 OLED S5606MA MX051W</h3>
+                <div class="w-[170px] h-auto bg-slate-200 m-auto rounded-sm text-sm text-left">
+                    <p><i class='bx bx-chip'></i>i5-12450H  RTX 3050</p>
+                    <p>8 GB  512 GB</p>
+                    <p><i class='bx bx-desktop'></i>15.5 inch FHD  144Hz</p>
+                </div>
+                <div class="text-red-800 text-lg">28.990.000 <span class="text-sm text-black">&#8363</span></div>
+            </div>
+            <div class="   rounded-md md:w-[200px] w-[170px] text-center shadow-sm shadow-black">
+                <img src="img/26.png" alt="Sản phẩm 1" class="max-w-full h-auto">
+                <p class="text-base">Laptop ASUS Zenbook Duo OLED UX8406MA PZ142W</p>
+                <div class="w-[170px] h-auto bg-slate-200 m-auto rounded-sm text-sm text-left">
+                    <p><i class='bx bx-chip'></i>i9-13900H  RTX 4070</p>
+                    <p>32 GB  2TB</p>
+                    <p><i class='bx bx-desktop'></i>16 inch UHD+OLED</p>
+                </div>
+                <div class="text-red-800 text-lg">58.990.000 <span class="text-sm text-black">&#8363</span></div>
+            </div>
+            <div class="   rounded-md md:w-[200px] w-[170px] text-center shadow-sm shadow-black">
+                <img src="img/26.png" alt="Sản phẩm 1" class="max-w-full h-auto">
+                <p class="text-base">Laptop ASUS Zenbook Duo OLED UX8406MA PZ142W</p>
+                <div class="w-[170px] h-auto bg-slate-200 m-auto rounded-sm text-sm text-left">
+                    <p><i class='bx bx-chip'></i>i9-13900H  RTX 4070</p>
+                    <p>32 GB  2TB</p>
+                    <p><i class='bx bx-desktop'></i>16 inch UHD+OLED</p>
+                </div>
+                <div class="text-red-800 text-lg">58.990.000 <span class="text-sm text-black">&#8363</span></div>
+            </div>
+            <div class="   rounded-md md:w-[200px] w-[170px] text-center shadow-sm shadow-black">
+                <img src="img/26.png" alt="Sản phẩm 1" class="max-w-full h-auto">
+                <p class="text-base">Laptop ASUS Zenbook Duo OLED UX8406MA PZ142W</p>
+                <div class="w-[170px] h-auto bg-slate-200 m-auto rounded-sm text-sm text-left">
+                    <p><i class='bx bx-chip'></i>i9-13900H  RTX 4070</p>
+                    <p>32 GB  2TB</p>
+                    <p><i class='bx bx-desktop'></i>16 inch UHD+OLED</p>
+                </div>
+                <div class="text-red-800 text-lg">58.990.000 <span class="text-sm text-black">&#8363</span></div>
+            </div>
+        </div>
+        <br>
+    </div>
+
+<!-- Chuot ban chay -->
+ <div class="bg-white text-center m-auto lg:mt-3 mt-3 rounded-md lg:w-[1000px] xl:w-[1200px] w-full">    
+        <div>
+            <br>
+            <div class="flex items-center justify-around">
+                <h2 class="font-haha md:text-xl text-lg flex items-center"><i class='bx bxs-keyboard mt-1 mr-3 md:text-xl text-lg'></i> Bàn phím bán chạy <span class="text-black ml-2 hidden md:block">|</span> <span class="text-lg mt-2 text-black hidden md:block"><i class='bx bxs-cart mr-2 text-red-900'></i>Miễn phí vận chuyển</span></h2><span class="text-blue-700 text-lg lg:text-sm">Xem tất cả ...</span>
+            </div>
+              
+            <br>
+        </div>
+        <div class="grid sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 grid-cols-2 lg:w-[950px] xl:w-[1100px] sm:w-[690px] w-[365px] h-auto lg:gap-2 lg:ml-11 gap-3 md:gap-4 m-auto mt-3 sm:items-center sm:gap-4">
+            <div class=" rounded-md md:w-[200px] w-[170px] h-[340px] text-center shadow-md shadow-black">
+                <a href=""><img src="img/akko-mod007v3-dragon.png" alt="Sản phẩm 1" class="max-w-full h-auto "></a>
+                <a href="Item1.html"><h3>AKKO MOD007 v3 HE Year of Dragon</h3></a>
+                <div class="w-[170px] h-auto bg-slate-200 m-auto rounded-sm text-sm text-left">
+                    <p>có dây</p>
+                    <p>TKL</p> 
+                    <p>ABS</p>
+                </div>
+                <div class="text-red-800 text-lg">2.490.000 <span class="text-sm text-black">&#8363</span></div>
+            </div>
+            <div class=" rounded-md md:w-[200px] w-[170px] h-[340px] text-center shadow-md shadow-black ">
+                <img src="img/VGNATK68.png" alt="Sản phẩm 1" class="max-w-full h-auto">
+            <h3>VGN ATK68 Đen 2.0 Red switch (Rapid Trigger)</h3>
+                <div class="w-[170px] h-auto bg-slate-200 m-auto rounded-sm text-sm text-left">
+                    <p>không dây</p>
+                    <p>mini</p>
+                    <p>ABS</p>
+                </div>
+                <div class="text-red-800 text-lg">4.290.000 <span class="text-sm text-black">&#8363</span></div>
+            </div>
+            <div class="  rounded-md md:w-[200px] w-[170px] h-[340px] text-center shadow-md shadow-black ">
+                <img src="img/akko3103DB.png" alt="Sản phẩm 1" class="max-w-full h-auto">
+                <h3> AKKO 3108 RF Dragon Ball Z Goku</h3>
+                <div class="w-[170px] h-auto bg-slate-200 m-auto rounded-sm text-sm text-left">
+                    <p>khong day</p>
+                    <p>full size</p>
+                </div>
+                <div class="text-red-800 text-lg">1.690.000 <span class="text-sm text-black">&#8363</span></div>
+            </div>
+            <div class="  rounded-md md:w-[200px] w-[170px] h-[340px] text-center shadow-md shadow-black ">
+                <img src="img/AsusROG.png" alt="Sản phẩm 1" class="max-w-full h-auto">
+                <h3>Asus ROG Strix Scope II 96 Wireless ROG NX Storm</h3>
+                <div class="w-[170px] h-auto bg-slate-200 m-auto rounded-sm text-sm text-left">
+                    <p>không dây</p>
+                    <p>full size</p>
+                    <p>ABS</p>
+                </div>
+                <div class="text-red-800 text-lg">3.890.000 <span class="text-sm text-black">&#8363</span></div>
+            </div>
+            <div class="   rounded-md md:w-[200px] w-[170px] h-[340px] text-center shadow-md shadow-black ">
+                <img src="img/Azoth.png" alt="Sản phẩm 1" class="max-w-full h-auto">
+                <h3>Asus ROG Azoth White NX Snow</h3>
+                <div class="w-[170px] h-auto bg-slate-200 m-auto rounded-sm text-sm text-left">
+                    <p>mini</p>
+                    <p>ABS</p>
+                </div>
+                <div class="text-red-800 text-lg">5.990.000 <span class="text-sm text-black">&#8363</span></div>
+            </div>
+            <div class="   rounded-md md:w-[200px] w-[170px] h-[340px]text-center shadow-md shadow-black ">
+                <img src="img/DareU.png" alt="Sản phẩm 1" class="max-w-full h-auto">
+                <h3>DareU EK75 White Black DareU Dream switch</h3>
+                <div class="w-[170px] h-auto bg-slate-200 m-auto rounded-sm text-sm text-left">
+                    <p>có dây</p>
+                    <p>TKL</p>
+                    <p>ABS</p>
+                </div>
+                <div class="text-red-800 text-lg">1.490.000 <span class="text-sm text-black">&#8363</span></div>
+            </div>
+            <div class="   rounded-md md:w-[200px] w-[170px] h-[340px] text-center shadow-md shadow-black ">
+                <div class="mt-6">
+                        <img src="img/ek87_pro_-_black_golden.png" alt="Sản phẩm 1" class="max-w-full h-auto">
+                        <p class="mt-4">EK87 Pro RGB Đen Dream Switch</p>
+                        <div class="w-[170px] h-auto bg-slate-200 m-auto rounded-sm text-sm text-left">
+                            <p>không dây</p>
+                            <p>TKL</p>
+                            <p>PBT</p>
+                        </div>
+                        <div class="text-red-800 text-lg">1.290.000 <span class="text-sm text-black">&#8363</span></div>
+                </div>
+                
+            </div>
+            <div class="   rounded-md md:w-[200px] w-[170px] h-[340px] text-center shadow-md shadow-black">
+                <div class="mt-6">
+                    <img src="img/ek87_pro_trang.png" alt="Sản phẩm 1" class="max-w-full h-auto">
+                    <p class="mt-4"> EK87 Pro RGB Trắng Dream Switch</p>
+                    <div class="w-[170px] h-auto bg-slate-200 m-auto rounded-sm text-sm text-left">
+                        <p>không dây</p>
+                        <p>TKL</p>
+                        <p>PBT</p>
+                    </div>
+                    <div class="text-red-800 text-lg">1.090.000 <span class="text-sm text-black">&#8363</span></div>
+                </div>
+                
+            </div>
+            <div class="   rounded-md md:w-[200px] w-[170px] h-[340px] text-center shadow-md shadow-black">
+                <div class="mt-6">
+                    <img src="img/ek98_pro.png" alt="Sản phẩm 1" class="max-w-full h-auto">
+                    <p class="mt-4">EK87 Pro RGB Trắng Dream Switch</p>
+                    <div class="w-[170px] h-auto bg-slate-200 m-auto rounded-sm text-sm text-left ">
+                        <p>không dây</p>
+                        <p>Full size</p>
+                        <p>PBT</p>
+                    </div>
+                    <div class="text-red-800 text-lg">1.290.000 <span class="text-sm text-black">&#8363</span></div>
+                </div>
+                
+            </div>
+            <div class="   rounded-md md:w-[200px] w-[170px] h-[340px] text-center shadow-md shadow-black">
+                <img src="img/LogiGProx60.png" alt="Sản phẩm 1" class="max-w-full h-auto">
+                <p>Logitech G Pro X 60 Light Speed Pink</p>
+                <div class="w-[170px] h-auto bg-slate-200 m-auto rounded-sm text-sm text-left">
+                    <p>không dây</p>
+                    <p>mini</p>
+                    <p>ABS</p>
+                </div>
+                <div class="text-red-800 text-lg">4.290.000 <span class="text-sm text-black">&#8363</span></div>
+            </div>
+        </div>
+        <br>
+    </div>
+<div class=" text-white py-10 px-0 text-[14px] bg-slate-900">
+    <div class="flex justify-between max-w-[1200px] my-0 mx-auto flex-wrap">
+        <div class="footer-column flex-1 m-[10px] min-w-[200px]">
+            <h3>Về Gear</h3>
+            <ul>
+                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="#">Tuyển dụng</a></li>
+                <li><a href="#">Chính sách bảo mật</a></li>
+            </ul>
+        </div>
+        <div class="footer-column flex-1 m-[10px] min-w-[200px]">
+            <h3>Hỗ trợ khách hàng</h3>
+            <ul>
+                <li><a href="#">Hướng dẫn mua hàng</a></li>
+                <li><a href="#">Chính sách đổi trả</a></li>
+                <li><a href="#">Liên hệ</a></li>
+            </ul>
+        </div>
+        <div class="footer-column flex-1 m-[10px] min-w-[200px]">
+            <h3>Liên hệ</h3>
+            <ul>
+                <li>Địa chỉ: Số 10 Đường ABC, Quận XYZ, TP.Đà nẵng</li>
+                <li>Điện thoại: 0123 456 789</li>
+                <li>Email: contact@blabla.com</li>
+            </ul>
+        </div>
+        <div class="footer-column flex-1 m-[10px] min-w-[200px]">
+            <h3>Kết nối với chúng tôi</h3>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">YouTube</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    function toggleMenu() {
+        const sideMenu = document.getElementById('sideMenu');
+        sideMenu.classList.toggle('-translate-x-full');
+        sideMenu.classList.toggle('translate-x-0');
+    }
+</script>
+<script src="js/GearUrek.js"></script>
+</body>
+</html>
